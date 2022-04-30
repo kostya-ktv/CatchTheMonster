@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { json, urlencoded } from 'express'
 import { URL_API } from './global.constants'
 import { RootRouter } from './src/Router/root.router'
 import { Logger } from './src/Service/Logger/logger.service'
@@ -9,7 +9,7 @@ export class App {
    private _root_router = new RootRouter().getRouter()
    private _port = process.env.SERVER_PORT
    private _log = Logger.getInstance()
-   
+ 
    private constructor(){}
 
    public static getInstance(): App {
@@ -23,7 +23,7 @@ export class App {
    }
 
    private _toUse() {
-      this._app.use(express.json())
+      this._app.use(urlencoded())
       this._app.use(URL_API, this._root_router)
    }
 }

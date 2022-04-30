@@ -8,8 +8,8 @@ export class RootRouter {
     constructor() {}
 
     private _initialRoutes() {
-        this._router.get(Routes.ROUTE_LOGIN, this._user_controller.login)
-        this._router.get(Routes.ROUTE_LOGOUT, this._user_controller.logout)
+        this._router.get(Routes.ROUTE_LOGIN, this._user_controller.login.bind(this._user_controller))
+        this._router.get(Routes.ROUTE_LOGOUT, this._user_controller.logout.bind(this._user_controller))
     }
 
     public getRouter() {

@@ -10,8 +10,8 @@ class RootRouter {
         this._user_controller = new user_controller_1.UserController();
     }
     _initialRoutes() {
-        this._router.get(routes_1.Routes.ROUTE_LOGIN, this._user_controller.login);
-        this._router.get(routes_1.Routes.ROUTE_LOGOUT, this._user_controller.logout);
+        this._router.get(routes_1.Routes.ROUTE_LOGIN, this._user_controller.login.bind(this._user_controller));
+        this._router.get(routes_1.Routes.ROUTE_LOGOUT, this._user_controller.logout.bind(this._user_controller));
     }
     getRouter() {
         this._initialRoutes();

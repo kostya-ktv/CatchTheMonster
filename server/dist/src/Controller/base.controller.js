@@ -7,7 +7,7 @@ class BaseController {
         return this.send(response, 200, data);
     }
     send(response, code, data) {
-        return response.status(code).json(data);
+        return data ? response.status(code).json(data) : response.status(code).json({ ok: code });
     }
 }
 exports.BaseController = BaseController;
