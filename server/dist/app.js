@@ -45,6 +45,7 @@ class App {
         this._app.listen(this._port, () => this._log.success(`server running on port: ${this._port}`));
     }
     _toUse() {
+        this._app.use((0, express_1.urlencoded)());
         this._app.use(global_constants_1.URL_API, this._root_router);
     }
 }

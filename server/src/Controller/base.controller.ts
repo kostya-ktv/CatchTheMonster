@@ -1,6 +1,6 @@
 import { Response } from "express";
-
 export abstract class BaseController {
+
    constructor(){}
 
    protected ok<T>(response: Response, data?: T) {

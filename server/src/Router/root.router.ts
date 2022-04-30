@@ -1,5 +1,6 @@
 import { Router } from "express"
 import { UserController } from "../Controller/UserController/user.controller"
+import { Logger } from "../Service/Logger/logger.service"
 import { Routes } from "./routes"
 
 export class RootRouter {

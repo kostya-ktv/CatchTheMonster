@@ -1,4 +1,4 @@
-import express, { json, urlencoded } from 'express'
+import express, { urlencoded } from 'express'
 import { URL_API } from './global.constants'
 import { RootRouter } from './src/Router/root.router'
 import { Logger } from './src/Service/Logger/logger.service'
